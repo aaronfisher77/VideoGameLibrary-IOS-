@@ -17,14 +17,19 @@ class AddGameViewController: UIViewController {
     @IBOutlet weak var genreSC: UISegmentedControl!
     @IBOutlet weak var ratingSC: UISegmentedControl!
     
-    
-    
     // Necessary Functions
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToLibrary", sender: Any.self)
+    }
+    
+    
     @IBAction func addButton(_ sender: Any) {
         guard // makes sure the variables have values
             
@@ -40,6 +45,7 @@ class AddGameViewController: UIViewController {
                 self.present(errorAlert, animated: true, completion: nil) // This makes for a cleaner transition when the error pops up
                 return
                 }
+        
         print(title)
         print(discription)
         
@@ -62,20 +68,18 @@ class AddGameViewController: UIViewController {
         if genreSC?.selectedSegmentIndex == 0 {
             gameGenre = .adventure
         }else if genreSC?.selectedSegmentIndex == 1 {
-            gameGenre = .shooter
-        }else if genreSC?.selectedSegmentIndex == 2 {
             gameGenre = .strategy
+        }else if genreSC?.selectedSegmentIndex == 2 {
+            gameGenre = .shooter
         }else if genreSC?.selectedSegmentIndex == 3 {
             gameGenre = .other
         }
         
-        Library.sharedInstance.game = [Game(gameTitle: title, discription: discription, rating: gameRating, genre: gameGenre)]
-
+        Library.sharedInstance.games.append(Game(gameTitle: title, discription: discription, rating: gameRating, genre: gameGenre))
+        self.dismiss(animated: true, completion: nil)
 
         self.performSegue(withIdentifier: "unwindToLibrary", sender: self)
     }
-
-    
 
     
 }

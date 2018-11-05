@@ -8,33 +8,36 @@
 
 import Foundation
 
-class Game {
+class Game{
     
-    enum Genre {
-        case adventure
-        case shooter
-        case strategy
-        case other
+    enum Genre: String {
+        case adventure = "adventure"
+        case shooter = "shooter"
+        case strategy = "strategy"
+        case other = "other"
     }
     
-    enum Rating {
-        case e      //Everyone
-        case t      //Teens or older than 13
-        case m      //Mature and any one over 17
-        case ao     //Adults only
-        case nr     //Not Rated this will only occur if a value is not given
+    enum Rating: String {
+        case e = "e"    //Everyone
+        case t = "t"   //Teens or older than 13
+        case m = "m"   //Mature and any one over 17
+        case ao = "ao"   //Adults only
+        case nr = "nr"   //Not Rated this will only occur if a value is not given
     }
     
-    enum Availability {
-        case checkedIn
-        case checkedOut(dueDate: Date)
+    enum Availability { // Created the variable for checking in and out a game.
+        case checkedIn // checks in
+        case checkedOut(dueDate: Date) // checks out
     }
     
+    // creates var for the Game Class
     let gameTitle: String
     let discription: String
     var rating: Rating
     var genre: Genre
     var availability: Availability
+    
+    // initializes the vars in the Game class
     
     init(gameTitle: String, discription: String, rating: Rating, genre: Genre) {
         self.gameTitle = gameTitle
@@ -43,6 +46,7 @@ class Game {
         self.rating = rating
         self.genre = genre
     }
+    
     
     
 }
