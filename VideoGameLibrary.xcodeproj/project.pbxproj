@@ -89,16 +89,16 @@
 			isa = PBXGroup;
 			children = (
 				C894079321875D0300B49D1B /* LibraryViewController.swift */,
-				C8940785218755CF00B49D1B /* Main.storyboard */,
-				C8940788218755D300B49D1B /* Assets.xcassets */,
 				C894079721877D6B00B49D1B /* Library.swift */,
 				C806D2F9218B5A2C004EA9FE /* LibraryCellTableViewCell.swift */,
-				C894078A218755D300B49D1B /* LaunchScreen.storyboard */,
 				C8940799218785A300B49D1B /* AddGameViewController.swift */,
 				C8940795218777B600B49D1B /* Game.swift */,
-				C8940781218755CF00B49D1B /* AppDelegate.swift */,
 				C8A8AFCF218CCE260064D3EB /* InfoPage.swift */,
+				C8940785218755CF00B49D1B /* Main.storyboard */,
+				C8940781218755CF00B49D1B /* AppDelegate.swift */,
+				C8940788218755D300B49D1B /* Assets.xcassets */,
 				C894078D218755D300B49D1B /* Info.plist */,
+				C894078A218755D300B49D1B /* LaunchScreen.storyboard */,
 			);
 			path = VideoGameLibrary;
 			sourceTree = "<group>";
@@ -183,10 +183,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VideoGameLibrary/Pods-VideoGameLibrary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

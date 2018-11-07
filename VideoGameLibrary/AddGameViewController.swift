@@ -25,16 +25,16 @@ class AddGameViewController: UIViewController {
         
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToLibrary", sender: Any.self)
+    @IBAction func backButton(_ sender: Any) { // Back Button
+        performSegue(withIdentifier: "unwindToLibrary", sender: Any.self) // Unwinds to the LibraryVC when back button is pressed
     }
     
     
     @IBAction func addButton(_ sender: Any) {
         guard // makes sure the variables have values
             
-            let title = gameTitleTB.text, !title.isEmpty,
-            let discription = discriptionTB.text, !discription.isEmpty
+            let title = gameTitleTB.text, !title.isEmpty, // makes sure that the title is filled in before creating a new game
+            let discription = discriptionTB.text, !discription.isEmpty // makes sure that the discription is filled in before creating a new game
             
             else{
                 // Pops up an error message that makes sure you have everything filled in
@@ -46,11 +46,11 @@ class AddGameViewController: UIViewController {
                 return
                 }
         
-        print(title)
-        print(discription)
+//        print(title)
+//        print(discription)
         
         var gameRating: Game.Rating = .nr
-        
+        // sets the rating to the selected index
         if ratingSC?.selectedSegmentIndex == 0 {
             gameRating = .e
         }else if ratingSC?.selectedSegmentIndex == 1 {
@@ -64,7 +64,7 @@ class AddGameViewController: UIViewController {
         }
 
         var gameGenre: Game.Genre = .other
-        
+        // sets the genre to the selected index
         if genreSC?.selectedSegmentIndex == 0 {
             gameGenre = .adventure
         }else if genreSC?.selectedSegmentIndex == 1 {
@@ -75,10 +75,10 @@ class AddGameViewController: UIViewController {
             gameGenre = .other
         }
         
-        Library.sharedInstance.games.append(Game(gameTitle: title, discription: discription, rating: gameRating, genre: gameGenre))
+        Library.sharedInstance.games.append(Game(gameTitle: title, discription: discription, rating: gameRating, genre: gameGenre)) // creates a new "Game" and enters it into the code.
         self.dismiss(animated: true, completion: nil)
 
-        self.performSegue(withIdentifier: "unwindToLibrary", sender: self)
+        self.performSegue(withIdentifier: "unwindToLibrary", sender: self) // Unwinds to the library
     }
 
     

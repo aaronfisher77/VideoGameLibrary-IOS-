@@ -42,6 +42,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEG-6H-3br">
+                                <rect key="frame" x="89" y="626" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viY-UG-fvq">
                                 <rect key="frame" x="291" y="29" width="62" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,8 +83,11 @@
                             <constraint firstItem="viY-UG-fvq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fvB-la-n2k" secondAttribute="trailing" constant="8" symbolic="YES" id="Qab-ti-Lj8"/>
                             <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VCR-vO-tcp" secondAttribute="trailing" symbolic="YES" id="TT9-Mi-P6A"/>
                             <constraint firstItem="2X9-nM-1Qa" firstAttribute="top" secondItem="7Ff-tW-Sor" secondAttribute="bottom" constant="39" id="VIG-LF-KQZ"/>
+                            <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" secondItem="hEG-6H-3br" secondAttribute="trailing" constant="89" id="Z8b-45-05R"/>
+                            <constraint firstItem="hEG-6H-3br" firstAttribute="leading" secondItem="FLu-ea-8vP" secondAttribute="leading" constant="89" id="bUm-zC-26a"/>
                             <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" secondItem="viY-UG-fvq" secondAttribute="trailing" constant="22" id="cD9-95-qr3"/>
                             <constraint firstItem="2X9-nM-1Qa" firstAttribute="leading" secondItem="7Ff-tW-Sor" secondAttribute="leading" id="ckF-vC-U8V"/>
+                            <constraint firstAttribute="bottom" secondItem="hEG-6H-3br" secondAttribute="bottom" constant="20" symbolic="YES" id="dkR-c2-Hzr"/>
                             <constraint firstItem="VCR-vO-tcp" firstAttribute="top" secondItem="2X9-nM-1Qa" secondAttribute="bottom" constant="8" symbolic="YES" id="hjy-zV-OgL"/>
                             <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" secondItem="VCR-vO-tcp" secondAttribute="trailing" constant="181" id="oGM-75-G7C"/>
                             <constraint firstItem="fvB-la-n2k" firstAttribute="top" secondItem="FLu-ea-8vP" secondAttribute="top" id="u5w-Qd-sCF"/>
@@ -87,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="FLu-ea-8vP"/>
                     </view>
                     <connections>
+                        <outlet property="dueDate" destination="hEG-6H-3br" id="6fb-1p-KSU"/>
                         <outlet property="gameDescription" destination="VCR-vO-tcp" id="KTe-uM-ptM"/>
                         <outlet property="gameTitle" destination="7Ff-tW-Sor" id="qWU-v2-rOL"/>
                         <segue destination="co9-vy-BuO" kind="unwind" identifier="unwindToLibrary" unwindAction="unwindToLibraryWithSegue:" id="R0j-OY-fB6"/>
