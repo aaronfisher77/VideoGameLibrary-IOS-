@@ -9,7 +9,6 @@
 import UIKit
 import DZNEmptyDataSet
 
-
 class LibraryViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     let library = Library.sharedInstance // Creates a globel variable the hold the library class
     

@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import RealmSwift
 
 class Game{
     
     enum Genre: String {
-        case adventure = "adventure" // adventure
-        case shooter = "shooter" // shooter
-        case strategy = "strategy" // strategy
-        case other = "other" // any onthert genre
+        case adventure = "adventure"
+        case shooter = "shooter"
+        case strategy = "strategy"
+        case other = "other"
     }
     
     enum Rating: String {
@@ -29,63 +28,25 @@ class Game{
     enum Availability { // Created the variable for checking in and out a game.
         case checkedIn // checks in
         case checkedOut(dueDate: Date) // checks out
-
-        init(date: Date?) {
-            if let date = date {
-                self = .checkedOut(dueDate: date)
-            } else {
-                self = .checkedIn
-            }
-        }
     }
     
     // creates var for the Game Class
-    @objc dynamic var gameTitle: String = ""
-    @objc dynamic var discription: String = ""
-    @objc private dynamic var ratingInternal: String = ""
-    @objc private dynamic var genreInternal: String = ""
-    @objc private dynamic var availInternal: Date? = nil
-    
-    var rating: Rating {
-        get {
-        return Rating(rawValue: ratingInternal)!
-        }
-        set {
-            ratingInternal = rating.rawValue
-        }
-    }
-    
-    
-    var genre: Genre {
-        get {
-            return Genre(rawValue: genreInternal)!
-        }
-        set {
-            genreInternal = genre.rawValue
-        }
-    }
-    
-    var availability: Availability {
-        get {
-            return Availability(date: availInternal)
-    }
-        set {
-            switch availability {
-            case .checkedIn:
-                availInternal = nil
-            case .checkedOut(let date):
-                availInternal = date
-            }
-        }
-    }
+    let gameTitle: String
+    let discription: String
+    var rating: Rating
+    var genre: Genre
+    var availability: Availability
     
     // initializes the vars in the Game class
-    convenience init(gameTitle: String, discription: String, rating: Rating, genre: Genre) {
-        self.init()
+    
+    init(gameTitle: String, discription: String, rating: Rating, genre: Genre) {
         self.gameTitle = gameTitle
         self.discription = discription
         self.availability = .checkedIn
         self.rating = rating
         self.genre = genre
     }
+    
+    
+    
 }

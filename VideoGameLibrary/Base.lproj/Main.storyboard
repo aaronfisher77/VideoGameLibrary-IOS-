@@ -62,11 +62,12 @@
                                     <action selector="backButton:" destination="PDM-lP-ZEd" eventType="touchUpInside" id="ZFZ-Mv-9An"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="*Discription goes here*" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCR-vO-tcp">
-                                <rect key="frame" x="16" y="267" width="178" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCR-vO-tcp">
+                                <rect key="frame" x="16" y="267" width="343" height="211"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Ynd-FS-NTr"/>
+                                    <constraint firstAttribute="height" constant="211" id="Yes-Zj-V6V"/>
                                 </constraints>
+                                <string key="text">*Discription goes here*                                                                                                                                    </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +90,7 @@
                             <constraint firstItem="2X9-nM-1Qa" firstAttribute="leading" secondItem="7Ff-tW-Sor" secondAttribute="leading" id="ckF-vC-U8V"/>
                             <constraint firstAttribute="bottom" secondItem="hEG-6H-3br" secondAttribute="bottom" constant="20" symbolic="YES" id="dkR-c2-Hzr"/>
                             <constraint firstItem="VCR-vO-tcp" firstAttribute="top" secondItem="2X9-nM-1Qa" secondAttribute="bottom" constant="8" symbolic="YES" id="hjy-zV-OgL"/>
-                            <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" secondItem="VCR-vO-tcp" secondAttribute="trailing" constant="181" id="oGM-75-G7C"/>
+                            <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" secondItem="VCR-vO-tcp" secondAttribute="trailing" constant="16" id="oGM-75-G7C"/>
                             <constraint firstItem="fvB-la-n2k" firstAttribute="top" secondItem="FLu-ea-8vP" secondAttribute="top" id="u5w-Qd-sCF"/>
                             <constraint firstItem="FLu-ea-8vP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2X9-nM-1Qa" secondAttribute="trailing" symbolic="YES" id="xBt-Se-4yb"/>
                         </constraints>
